@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import headerimg from "./Assets/Images/hero-824e4df4.webp";
-import Bus from "./Components/Bus/Bus";
+import FormList from "./Components/Bus/FormList";
 import Index from "./Pages/Index";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/Bus" element={<Bus />} />
+          <Route path="/Bus" element={<FormList />} />
         </Routes>
       </BrowserRouter>
     </div>
