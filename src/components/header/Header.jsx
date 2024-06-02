@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <div className="mt-[-5px] z-1">
       <div className="bg-gray-100">
-        <ul className="flex gap-5 p-8">
+        <ul className="flex gap-[1rem] p-8">
           <NavLink style={navLinkStyle} className="mb-2" to="/">
             <i className="bi bi-house-door mb-3"></i> خانه
           </NavLink>

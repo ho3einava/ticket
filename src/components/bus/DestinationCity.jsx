@@ -1,11 +1,8 @@
-import React from "react";
-
 import axios from "axios";
-import BASE_URL from "../../../Server/BASE_URL";
+import BASE_URL from '../../../services/constants';
 import { useQuery } from "@tanstack/react-query";
 
 export default function DestinationCity({ register, name }) {
-  
   const result = useQuery({
     queryKey: ["originCity"],
     queryFn: async () => {
@@ -20,8 +17,8 @@ export default function DestinationCity({ register, name }) {
     return "Error" + result.error.message;
   }
 
-  console.log(result.data);
   
+
   return (
     <div>
       <fieldset className="p-[1rem]">

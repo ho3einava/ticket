@@ -1,7 +1,8 @@
 import DestinationCity from "./DestinationCity";
 import OriginCity from "./OriginCity";
 import { useForm , Controller } from "react-hook-form";
-import Date from "../Form/Date";
+import Date from "../form/Date";
+import Ticket from "./Ticket";
 export default function FormList() {
   const {register , handleSubmit , control} = useForm()
   const onSubmit = (data) => {
@@ -20,6 +21,7 @@ export default function FormList() {
           جستجو
         </button>
       </form>
+      <Ticket />
     </div>
   );
 }

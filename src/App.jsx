@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header/Header";
-import headerimg from "./Assets/Images/hero-824e4df4.webp";
-import FormList from "./Components/Bus/FormList";
-import Index from "./Pages/Index";
+import Header from "./components/header/Header";
+import headerimg from "./assets/images/hero.webp";
+import FormList from "./components/bus/FormList";
+import Index from "./pages/Index";
 
 function App() {
   return (
