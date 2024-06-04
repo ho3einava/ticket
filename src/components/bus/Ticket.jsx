@@ -1,14 +1,14 @@
 import React from 'react'
-import TicketItem from './TicketItem'
+import TicketItem from './TicketList'
 import { useQuery } from '@tanstack/react-query'
-import BASE_URL from '../../../services/constants'
+import {BASE_URL} from '../../../constants'
 import axios from 'axios'
 
 export default function Ticket() {
   const result = useQuery({
     queryKey : ['tickets'],
     queryFn : async () => {
-      const response = await axios.get(`${BASE_URL}/tikets`)
+      const response = await axios.get(`${BASE_URL}/tickets`)
       return response.data
     }
   })

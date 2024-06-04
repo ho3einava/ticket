@@ -1,5 +1,5 @@
 import axios from "axios";
-import BASE_URL from '../../../services/constants'
+import {BASE_URL} from '../../../constants'
 import { useQuery } from "@tanstack/react-query";
 export default function OriginCity({ register, name }) {
   const result = useQuery({
