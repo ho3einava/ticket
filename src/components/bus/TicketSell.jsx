@@ -1,10 +1,12 @@
 
+
 import { Link } from "react-router-dom";
 
 
 
 export default function TicketSell({data}) {
-    
+
+  
   return (
       <div >
         
