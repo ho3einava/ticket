@@ -1,4 +1,7 @@
 import { Button ,Popover } from "flowbite-react";
+
+
+import BusSeat from "./ticket/BusSeat";
 export default function Seats() {
     
   return (
@@ -7,12 +10,12 @@ export default function Seats() {
          
       arialabelledby="default-popover"
       content={
-        <div className="w-64 text-sm text-gray-500">
+        <div className="w-94 text-sm text-gray-500">
           <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 ">
             <h3 id="default-popover" className="font-semibold text-gray-900  ">نقشه صندلی ها</h3>
           </div>
-          <div className="px-3 py-2">
-            <p>ستون و ردیف صندلی ها  </p>
+          <div className="px-5 py-4">
+            <BusSeat />
           </div>
         </div>
       }

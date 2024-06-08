@@ -1,6 +1,6 @@
 import React from 'react'
 import InputText from '../../form/InputText'
-import ModalForm from './ModalForm'
+import {ModalForm} from './ModalForm'
 import Select from '../../form/Select'
 import { useForm } from 'react-hook-form'
 export default function TravelForm() {
