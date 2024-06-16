@@ -4,6 +4,7 @@ import headerimg from "./assets/images/hero.webp";
 import FormList from "./components/bus/FormList";
 import TicketItem from "./components/bus/TicketItem";
 import Index from "./pages/Index";
+import Payment from "./components/bus/Payment";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/tickets" element={<FormList />} />
           <Route path="/tickets/:id" element={<TicketItem />} />
+          <Route path="/tickets/payment" element={<Payment />} />
         </Routes>
       </BrowserRouter>
     </div>

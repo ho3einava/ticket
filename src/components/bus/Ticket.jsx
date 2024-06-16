@@ -1,25 +1,15 @@
-import React from 'react'
-import TicketItem from './TicketList'
-import { useQuery } from '@tanstack/react-query'
-import {BASE_URL} from '../../../constants'
-import axios from 'axios'
+import React from "react";
+import TicketItem from "./TicketList";
 
-export default function Ticket() {
-  const result = useQuery({
-    queryKey : ['tickets'],
-    queryFn : async () => {
-      const response = await axios.get(`${BASE_URL}/tickets`)
-      return response.data
-    }
-  })
-  
+
+export default function Ticket({tickets}) {
+
+
   return (
     <div>
-       <div className='flex flex-col w-[100%] rounded bg-gray-300  justify-center items-center gap-[1rem] mt-4 pt-5'>
-        {result.data && result.data.map((data) => (
-        <TicketItem data={data}  />
-        ))}
-        </div> 
+      <div className="flex flex-col w-[100%] rounded bg-gray-300  justify-center items-center gap-[1rem] mt-4 pt-5">
+        {tickets && tickets.map((ticket) => <TicketItem data={ticket} />)}
+      </div>
     </div>
-  )
+  );
 }

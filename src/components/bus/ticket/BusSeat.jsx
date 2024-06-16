@@ -15,7 +15,7 @@ export default function BusSeat() {
   if(isPending){
     return <li>Loading...</li>
   }
-  console.log(data)
+  
   return (
     <div>
       <div className=" flex relative w-[80rem] h-[20rem] bg-gray-200 rounded-[5px]">
