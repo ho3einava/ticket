@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-export default function ({register , name}) {
+export default function ({ register, name }) {
   return (
     <div>
-        <input {...register(name , {required : true})} name={name} className='w-[15rem] h-[3rem]'/>
+      <input
+        {...register(name, { required: true })}
+        name={name}
+        className="w-[15rem] h-[3rem]"
+      />
     </div>
-  )
+  );
 }

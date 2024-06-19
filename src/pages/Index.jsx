@@ -1,11 +1,9 @@
-
-
 export default function Index() {
   return (
     <div>
       <div className=" flex-column ">
         <h1 className="font-bold m-8 pt-5">مزایای خرید بلیط از علی‌بابا</h1>
-        
+
         <p className="p-8">
           شما با خرید بلیط از علی‌بابا با سامانه مطمئن و معتبری روبه‌رو هستید که
           تمام نیازهایتان را پاسخ می‌دهد. برای خرید آنلاین بلیط در علی‌بابا

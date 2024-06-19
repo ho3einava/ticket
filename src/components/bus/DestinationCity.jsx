@@ -1,5 +1,5 @@
 import axios from "axios";
-import {BASE_URL} from '../../../constants';
+import { BASE_URL } from "../../../constants";
 import { useQuery } from "@tanstack/react-query";
 
 export default function DestinationCity({ register, name }) {
@@ -16,8 +16,6 @@ export default function DestinationCity({ register, name }) {
   if (result.error) {
     return "Error" + result.error.message;
   }
-
-  
 
   return (
     <div>

@@ -50,7 +50,7 @@ export default function FormList() {
           جستجو
         </button>
       </form>
-      <Ticket  tickets = {tickets}/>
+      <Ticket tickets={tickets} />
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Header() {
           <NavLink style={navLinkStyle} className="mb-2" to="/">
             <i className="bi bi-house-door mb-3"></i> خانه
           </NavLink>
-          <NavLink style={navLinkStyle}  to="/tickets">
+          <NavLink style={navLinkStyle} to="/tickets">
             <i className="bi bi-bus-front mb-3"></i> اتوبوس
           </NavLink>
         </ul>

@@ -1,40 +1,67 @@
 import React, { useEffect } from "react";
-import { headPassenger } from "../../feature/ticket/passengerSlice";
-import { getTickets } from "../../feature/ticket/ticketSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import { getTickets } from "../../feature/ticket/ticketSlice";
 
 export default function Payment() {
-  const dispatch = useDispatch();
+  const dispattch = useDispatch();
   useEffect(() => {
-    dispatch(headPassenger());
-    dispatch(getTickets());
-  }, [dispatch]);
-  const data = useSelector((state) => state.passenger);
+    dispattch(getTickets());
+  }, [dispattch]);
+  
+  const passenger = useSelector((state) => state.passenger);
+  console.log(passenger)
   const ticket = useSelector((state) => state.tickets);
-  console.log(data, ticket);
   return (
     <div>
       <div className="flex justify-center mt-8 justify-center rounded-[5px]">
-        <div className="w-[40rem] h-[35rem] bg-gray-200 border-2 border-solid border-slate-800 mb-8 rounded-[5px] flex justify-center items-center">
-          <div className="w-[15rem] h-[25rem]    flex flex-col gap-5">
-            {data &&
-              data.map((user) => (
-                <>
-                  <div className="flex w-[13rem]  items-center">
-                    <label>نام:</label>
-                    <div key={user.id}>{user.name}</div>
-                  </div>
-                  <div className="flex  w-[13rem]   items-center">
-                    <label>نام خانوادگی:</label>
-                    <div>{user.family}</div>
-                  </div>
-                  <div className="flex  w-[13rem] items-center">
-                    <label> شماره تماس:</label>
-                    <div>{user.phoneNumber}</div>
-                  </div>
-                </>
+        <div className="w-[40rem] h-[65rem] bg-gray-200 border-2 border-solid border-slate-800 mb-8 rounded-[5px] flex justify-center items-center">
+          <div className="w-[30rem] h-[55rem]  flex flex-col flex-wrap gap-5">
+            {passenger.filter((item) => item.isHeadPassenger).map((head) => (
+             
+             <div>
+                <div className="flex w-[13rem]  items-center">
+                  <label>نام:</label>
+                  <div key={head.id}>{head.name}</div>
+                </div>
+                <div className="flex  w-[13rem]   items-center">
+                  <label>نام خانوادگی:</label>
+                  <div>{head.family}</div>
+                </div>
+                <div className="flex  w-[13rem]   items-center">
+                  <label> جنسیت:</label>
+                  <div>{head.gender}</div>
+                </div>
+                <div className="flex  w-[13rem] items-center">
+                  <label> شماره تماس:</label>
+                  <div>{head.phoneNumber}</div>
+                </div>
+                <div className="flex  w-[13rem] items-center">
+                  <label> کد ملی:</label>
+                  <div>{head.nationalCode}</div>
+                </div>
+               
+              </div>
+            ))}
+            <div className="flex  w-[13rem] items-center">
+                  <label> شماره صندلی : </label>
+                  {passenger.map((item) => <div>-{item.seatNum}</div>)} 
+                </div>
+            
+            <div className="w-[28rem] h-[10rem]  ">
+              <h3 className="font-bold text-lg mr-4 mt-5">مسافرین همراه:</h3>
+              <div className="flex justify-center mt-3 gap-[4rem]">
+                <span>نام</span>
+                <span>نام خانوادگی</span>
+                <span>شماره همراه</span>
+              </div>
+              {passenger.filter((item) => item.isPassenger).map((users) => (
+                <div className="flex justify-center mt-3 gap-[7rem]">
+                  <span>{users.name}</span>
+                  <span>{users.family}</span>
+                  <span>{users.phoneNumber}</span>
+                </div>
               ))}
+            </div>
 
             <div className="flex  w-[13rem]   items-center">
               <label>مبدا:</label>
@@ -60,11 +87,9 @@ export default function Payment() {
               {ticket.beforeDiscountPrice}
             </div>
 
-            <div className="flex  w-[13rem]  items-center">
-              <label> شماره صندلی:</label>
-            </div>
+            
 
-            <button  className="w-[7rem] h-[4rem] p-[1rem] border-2 border-solid border-blue-700 mr-[3rem]">
+            <button className="w-[7rem] h-[4rem] p-[1rem] border-2 border-solid border-blue-700 mr-[3rem]">
               پرداخت
             </button>
           </div>

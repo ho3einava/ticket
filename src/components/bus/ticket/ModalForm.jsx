@@ -1,26 +1,27 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// import { setPassanger } from "../../../feature/ticket/passengerSlice";
+import { useDispatch } from "react-redux";
+import { headPassenger } from "../../../feature/ticket/passengerSlice";
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 import InputText from "../../form/InputText";
 import { useForm } from "react-hook-form";
 
-
 export function ModalForm() {
-  // const dispatch = useDispatch()
-  const { register, handleSubmit , reset } = useForm();
+  const dispatch = useDispatch();
+  const { register, handleSubmit, reset } = useForm();
   const [openModal, setOpenModal] = useState(false);
- 
-  
+
   const onSubmit = (data) => {
-    // dispatch(setPassanger({
-    //   name : data.name,
-    //   family : data.family,
-    //   phoneNumber : data.phoneNumber
-    // }))
-    reset()
-    console.log(data)
+    dispatch(
+      headPassenger({
+        name: data.passengerName,
+        family: data.passengerFamily,
+        phoneNumber: data.passengerPhoneNumber,
+        isPassenger : true
+      })
+    );
+    
+    reset();
   };
   return (
     <div>
@@ -28,7 +29,6 @@ export function ModalForm() {
         onClick={() => setOpenModal(true)}
         className="mr-[3rem] mt-[2rem]"
       >
-        
         اضافه کردن مسافر همراه
       </Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
@@ -40,26 +40,28 @@ export function ModalForm() {
           >
             <fieldset className="w-[10rem] p-[0.25rem]">
               <legend>نام:</legend>
-              <InputText register={register} name={"name"} />
+              <InputText register={register} name={"passengerName"} />
             </fieldset>
             <fieldset className="w-[10rem] p-[0.25rem]">
               <legend>نام خانوادگی:</legend>
-              <InputText register={register} name={"family"} />
+              <InputText register={register} name={"passengerFamily"} />
             </fieldset>
             <fieldset className="w-[10rem] p-[0.25rem]">
               <legend> شماره همراه:</legend>
-              <InputText register={register} name={"phoneNumber"} />
+              <InputText register={register} name={"passengerPhoneNumber"} />
             </fieldset>
-            <button className=" p-3 border-solid border-2 border-blue-700 text-blue-700 rounded-[5px]" type="submit" >ثبت مسافر</button>
-            
-          
-        </form>
+            <button
+              className=" p-3 border-solid border-2 border-blue-700 text-blue-700 rounded-[5px]"
+              type="submit"
+            >
+              ثبت مسافر
+            </button>
+          </form>
         </Modal.Body>
         <Modal.Footer>
-        <Button  onClick={() => setOpenModal(false)}>خروج</Button>
+          <Button onClick={() => setOpenModal(false)}>خروج</Button>
         </Modal.Footer>
       </Modal>
-      
     </div>
   );
 }
