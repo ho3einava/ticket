@@ -15,11 +15,11 @@ export default function TravelForm() {
   const phoneNumberRegex = /((0?9)|(\+?989))\d{2}\W?\d{3}\W?\d{4}/g;
   const nationalCodeRegex = /^[0-9]{10}$/g;
   const schema = z.object({
-    name : z.string().min(2 , {message : "name is required"}).max(10,{message :"name must be at 10 characters log"}),
-    family : z.string().min(2 , {message :"family is required"}).max(12 ,{message : "family must be at 12 characters long"} ),
+    name : z.string().min(2 , {message : "فیلد نام اجباری است"}).max(10,{message :"فیلد نام طولانی است"}),
+    family : z.string().min(2 , {message :"فیلد نام خانوادگی اجباری است"}).max(12 ,{message : "فیلد نام خانوادگی طولانی است"} ),
     gender : z.string(),
-    nationalCode : z.string().regex(nationalCodeRegex , {message :"nationalCode is invalid"}),
-    phoneNumber: z.string().regex(phoneNumberRegex, {message :"phoneNumber is invalid"}),
+    nationalCode : z.string().regex(nationalCodeRegex , {message :"کد ملی نامعتبر است"}),
+    phoneNumber: z.string().regex(phoneNumberRegex, {message :"شماره همراه نامعتبر است"}),
 
 
   })

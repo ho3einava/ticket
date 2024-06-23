@@ -41,7 +41,12 @@ export default function FormList() {
         <div className="flex p-[3rem] rounded gap-[3rem]">
           <OriginCity register={register} name={"origin"} />
           <DestinationCity register={register} name={"destination"} />
-          <Date Controller={Controller} control={control}  />
+          <Date
+            register={register}
+            name={"DatePicker"}
+            Controller={Controller}
+            control={control}
+          />
         </div>
         <button
           type="submit"

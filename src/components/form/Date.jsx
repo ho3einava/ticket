@@ -2,22 +2,23 @@ import DatePicker from "react-multi-date-picker";
 import persianDate from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 
-export default function Date({ Controller, control }) {
+export default function Date({ Controller, control , register , name }) {
   return (
     <div>
       <fieldset className="p-[1rem]">
         <legend>تاریخ</legend>
         <Controller
           name="ticketDate"
+          {...register(name,  { required: true   } )}
           control={control}
           render={({ field }) => (
             <DatePicker
               onChange={(data) => {
                 field.onChange(data.toDate());
+
               }}
               minDate="1403/03/01"
               maxDate="1403/12/01"
-              currentDate="1403/03/01"
               style={{
                 backgroundColor: "aliceblue",
                 height: "45px",
