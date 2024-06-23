@@ -17,7 +17,7 @@ export default function Date({ Controller, control }) {
               }}
               minDate="1403/03/01"
               maxDate="1403/12/01"
-              value="1403/03/01"
+              currentDate="1403/03/01"
               style={{
                 backgroundColor: "aliceblue",
                 height: "45px",

@@ -12,7 +12,7 @@ export default function SeatNum({ data }) {
         seatNum: data.number,
       })
     );
-    console.log(data.number);
+    
   };
 
   return (
