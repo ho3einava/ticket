@@ -1,14 +1,12 @@
 import React from "react";
 import SeatNum from "./SeatNum";
 import { useQuery } from "@tanstack/react-query";
-import { BASE_URL } from "../../../../constants";
-import axios from "axios";
-
+import { instance } from "@api/axiosWarper";
 export default function BusSeat() {
   const { data, isPending } = useQuery({
     queryKey: ["seat"],
     queryFn: async () => {
-      const response = await axios.get(`${BASE_URL}/seat`);
+      const response = await instance.get(`/seat`);
       return response.data;
     },
   });

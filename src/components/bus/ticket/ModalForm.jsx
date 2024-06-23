@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { headPassenger } from "../../../feature/ticket/passengerSlice";
+import { headPassenger } from "@store/feature/ticket/passengerSlice";
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
-import InputText from "../../form/InputText";
+import InputText from "@form/InputText";
 import { useForm } from "react-hook-form";
 
 export function ModalForm() {
@@ -17,10 +17,10 @@ export function ModalForm() {
         name: data.passengerName,
         family: data.passengerFamily,
         phoneNumber: data.passengerPhoneNumber,
-        isPassenger : true
+        isPassenger: true,
       })
     );
-    
+
     reset();
   };
   return (

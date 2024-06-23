@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/header/Header";
+import Header from "@components/header/Header";
 import headerimg from "./assets/images/hero.webp";
-import FormList from "./components/bus/FormList";
-import TicketItem from "./components/bus/TicketItem";
+import FormList from "@components/bus/FormList";
+import TicketItem from "@components/bus/TicketItem";
 import Index from "./pages/Index";
-import Payment from "./components/bus/Payment";
+import Payment from "@components/bus/Payment";
 
 function App() {
   return (

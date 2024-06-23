@@ -1,19 +1,16 @@
 import DestinationCity from "./DestinationCity";
 import OriginCity from "./OriginCity";
 import { useForm, Controller } from "react-hook-form";
-import Date from "../form/Date";
+import Date from "@form/Date";
 import Ticket from "./Tickets";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "../../../constants/index";
-
+import { instance } from "@api/axiosWarper";
 export default function FormList() {
-  const [tickets, setTickets] = useState();
+const [tickets, setTickets] = useState();
 
   useEffect(() => {
     const filterticket = async () => {
-      const response = await axios.get(`${BASE_URL}/tickets`);
-
+      const response = await instance.get(`/tickets`);
       setTickets(response.data);
     };
     filterticket();

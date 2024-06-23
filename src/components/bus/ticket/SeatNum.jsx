@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { seat } from "../../../feature/ticket/passengerSlice";
+import { seat } from "@store/feature/ticket/passengerSlice";
 import { useDispatch } from "react-redux";
 export default function SeatNum({ data }) {
   const dispatch = useDispatch();

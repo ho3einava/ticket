@@ -1,13 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../../constants";
-
+import { instance } from "@api/axiosWarper"; 
 export const getTickets = createAsyncThunk("tickets/getTickets", async () => {
-  const response = await fetch(`${BASE_URL}/tickets/1`);
-  if (response.ok) {
-    const tickets = await response.json();
+  const response = await instance.get(`/tickets/1`)
+  const tickets = response.data
     return { tickets };
   }
-});
+);
 
 export const ticketSlice = createSlice({
   name: "tickets",

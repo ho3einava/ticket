@@ -1,10 +1,10 @@
 import React from "react";
-import InputText from "../../form/InputText";
+import InputText from "@form/InputText";
 import { ModalForm } from "./ModalForm";
-import Select from "../../form/Select";
+import Select from "@form/Select";
 import { useForm } from "react-hook-form";
 import Passengers from "./Passengers";
-import { headPassenger } from "../../../feature/ticket/passengerSlice";
+import { headPassenger } from "@store/feature/ticket/passengerSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";

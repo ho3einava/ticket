@@ -1,14 +1,9 @@
-import axios from "axios";
-import { BASE_URL } from "../../../constants";
 import { useQuery } from "@tanstack/react-query";
-
+import { cities } from "../../services/cities";
 export default function DestinationCity({ register, name }) {
   const result = useQuery({
     queryKey: ["originCity"],
-    queryFn: async () => {
-      const respoonse = await axios.get(`${BASE_URL}/cities`);
-      return respoonse.data;
-    },
+    queryFn: cities,
   });
   if (result.isPending) {
     return <h3>Loading ...</h3>;
@@ -29,7 +24,7 @@ export default function DestinationCity({ register, name }) {
             },
           })}
         >
-          {result.data.map((data) => (
+          {result.data.filter((item) => item.isActive).map((data) => (
             <option key={data.id}>{data.name}</option>
           ))}
         </select>
