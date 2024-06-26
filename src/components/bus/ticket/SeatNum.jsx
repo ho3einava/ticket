@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 export default function SeatNum({ data }) {
   const dispatch = useDispatch();
   const [active, setActive] = useState(false);
-
   const handleSeat = (data) => {
     setActive(!active);
     dispatch(

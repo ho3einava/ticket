@@ -1,9 +1,7 @@
 import React from "react";
-
 import { useSelector } from "react-redux";
 export default function Passengers() {
   const users = useSelector((state) => state.passenger);
-  console.log(users)
   return (
     <div>
       <div className="w-[30rem] h-[11rem] border-solid border-2 border-slate-800 bg-gray-200 absolute bottom-2 right-[20rem] rounded-[5px] p-[1rem]">
@@ -15,8 +13,8 @@ export default function Passengers() {
         </div>
         {users &&
           users.map((user) => (
-            <div className="flex gap-12 justify-center" key={user.id}>
-              <div>{user.name}</div>
+            <div className="flex gap-12 justify-center" >
+              <div key={user.id}>{user.name}</div>
               <div>{user.family}</div>
               <div>{user.phoneNumber}</div>
             </div>

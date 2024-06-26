@@ -1,8 +1,8 @@
-import DestinationCity from "./DestinationCity";
-import OriginCity from "./OriginCity";
+import DestinationCity from "../components/bus/DestinationCity";
+import OriginCity from "../components/bus/OriginCity";
 import { useForm, Controller } from "react-hook-form";
 import Date from "@form/Date";
-import Ticket from "./Tickets";
+import Ticket from "../components/bus/Tickets";
 import { useEffect, useState } from "react";
 import { instance } from "@api/axiosWarper";
 export default function FormList() {

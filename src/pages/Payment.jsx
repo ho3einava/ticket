@@ -7,7 +7,6 @@ export default function Payment() {
   useEffect(() => {
     dispattch(getTickets());
   }, [dispattch]);
-
   const passenger = useSelector((state) => state.passenger);
   const ticket = useSelector((state) => state.tickets);
   return (
@@ -44,7 +43,7 @@ export default function Payment() {
             <div className="flex  w-[13rem] items-center">
               <label> شماره صندلی : </label>
               {passenger.map((item) => (
-                <div>-{item.seatNum}</div>
+                <div key={item.id}>-{item.seatNum}</div>
               ))}
             </div>
 

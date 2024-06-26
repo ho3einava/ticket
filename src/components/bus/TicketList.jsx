@@ -65,7 +65,6 @@ export default function TicketList({ data }) {
             </div>
             <div className="mt-5">
               <span className="text-sm text-red-600 mt-[3rem]">
-                {" "}
                 {data.availableSeats} صندلی باقی مانده است
               </span>
             </div>

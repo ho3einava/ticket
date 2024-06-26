@@ -10,7 +10,8 @@ export default defineConfig({
       '@store' :path.resolve(__dirname , './src/store'),
       '@api' :path.resolve(__dirname , './src/api'),
       '@form' :path.resolve(__dirname , './src/components/form'),
-      '@constants': path.resolve(__dirname , './src/constants')
+      '@constants': path.resolve(__dirname , './src/constants'),
+      '@pages' : path.resolve(__dirname, './src/pages')
     }
   }
 })

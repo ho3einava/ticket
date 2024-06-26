@@ -10,7 +10,7 @@ export default function BusSeat() {
       return response.data;
     },
   });
-  if (isPending) {
+  if(isPending) {
     return <li>Loading...</li>;
   }
 
@@ -33,13 +33,13 @@ export default function BusSeat() {
           </span>
           <div className="border-[1px] border-gray-300 h-[100%] absolute left-[4rem]"></div>
           <div className="absolute left-[4.5rem] top-[1rem] flex flex-wrap gap-1 w-[15rem] py-2 justify-center">
-            {data && data.result.slice(0, 8).map((e) => <SeatNum data={e} />)}
+            {data && data.result.slice(0, 8).map((e) => <SeatNum data={e} key={e.id} />)}
           </div>
           <div className="absolute right-[2rem] top-[1rem] flex flex-wrap gap-1 w-[15rem] py-2 justify-center ">
-            {data && data.result.slice(8, 16).map((e) => <SeatNum data={e} />)}
+            {data && data.result.slice(8, 16).map((e) => <SeatNum data={e} key={e.id}/>)}
           </div>
           <div className="absolute right-[1.2rem] bottom-[0.5rem] flex flex-wrap gap-0.5 w-[35rem] py-2  justify-center">
-            {data && data.result.slice(16, 26).map((e) => <SeatNum data={e} />)}
+            {data && data.result.slice(16, 26).map((e) => <SeatNum data={e} key={e.id}/>)}
           </div>
         </div>
       </div>
